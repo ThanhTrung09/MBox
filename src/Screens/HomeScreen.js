@@ -1,12 +1,16 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { createIconSetFromFontello } from 'react-native-vector-icons';
+import fontelloConfig from '../../assets/config.json';
+const Icon = createIconSetFromFontello(fontelloConfig);
 
 export default function HomeScreen() {
     return (
         <View>
             <Text style={styles.container}>Lương đã ứng trong tháng</Text>
-            <Icon name="rocket" size={40} color="#900" />
+            <Icon name="eye-hide" size={40} color="#3FA1EA" />
+            <Icon name="briefcase" size={40} color="#0276C4" />
+            <Icon name="user" size={40} color="#0276C4" />
         </View>
     )
 }
