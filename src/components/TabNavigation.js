@@ -85,7 +85,7 @@ const Tab = createBottomTabNavigator();
 export default function TabNavigation() {
     return (
         <NavigationContainer>
-            <Tab.Navigator tabBar={(props) => <MyTabBar {...props} />}>
+            <Tab.Navigator screenOptions={{ headerShown: false }} tabBar={(props) => <MyTabBar {...props} />}>
                 <Tab.Screen name="Mbox" component={HomeScreen} />
                 <Tab.Screen name="Lịch sử" component={HistoryScreen} />
                 <Tab.Screen name="Thông báo" component={NotificationScreen} />
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
     },
     text: {
-        fontFamily: 'SF-Pro-Family',
+        fontFamily: 'SF-Pro-Display',
         fontSize: 15,
         fontStyle: 'normal',
         fontWeight: '500',
