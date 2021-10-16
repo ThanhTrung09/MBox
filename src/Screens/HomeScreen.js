@@ -5,6 +5,7 @@ import fontelloConfig from '../../assets/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
 
 export default function HomeScreen() {
+
     return (
         <View>
             <Text style={styles.container}>Lương đã ứng trong tháng</Text>
