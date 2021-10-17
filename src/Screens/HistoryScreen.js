@@ -17,8 +17,8 @@ export default function HistoryScreen() {
                 <ScrollView showsVerticalScrollIndicator={false} style={{ height: height - 80 }}>
                     {/* Chưa làm ra */}
                     <View style={{ backgroundColor: '#02A04D', height: 99, width: '100%', borderRadius: 20, marginBottom: 17, justifyContent: 'center', alignItems: 'center' }}>
-                        <Text>Đã ứng trong kỳ</Text>
-                        <Text>5.000.000 đ</Text>
+                        <Text style={styles.headerText1}>Đã ứng trong kỳ</Text>
+                        <Text style={styles.headerText2}>5.000.000 đ</Text>
                     </View>
                     {/* ... */}
 
@@ -150,6 +150,23 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         lineHeight: 21.48,
         color: '#111111'
+    },
+    headerText1: {
+        fontFamily: 'SF-Pro-Display',
+        fontSize: 14,
+        lineHeight: 17,
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        color: '#ffffff',
+        marginBottom: 7
+    },
+    headerText2: {
+        fontFamily: 'SF-Pro-Display',
+        fontSize: 25,
+        lineHeight: 29,
+        fontStyle: 'normal',
+        fontWeight: '600',
+        color: '#ffffff',
     },
     bodyBox: {
         flexDirection: 'row',

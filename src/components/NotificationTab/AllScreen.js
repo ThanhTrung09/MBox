@@ -69,6 +69,21 @@ export default function AllScreen() {
                         <Text style={styles.boxMainText4}>Bạn muốn tăng hạn mức nhận trước lương của mình? Hãy tiến hành xác thực thông tin cá nhân để được tăng tủ lệ ứng trước lương nhé</Text>
                     </View>
                 </View>
+
+                <View style={styles.box}>
+                    <View style={styles.boxMain}>
+                        <View style={styles.boxMainTitle}>
+                            <View style={styles.customIcon1}>
+                                <Icon name='dollar-1' size={16} color='white' />
+                            </View>
+                            <Text style={styles.boxMainText1}>Giao dịch</Text>
+                            <Text style={styles.boxMainText2}>27/08</Text>
+                        </View>
+                        <View style={styles.crossBar}></View>
+                        <Text style={styles.boxMainText3}>Ứng lương thành công</Text>
+                        <Text style={styles.boxMainText4}>Giao dịch ứng 1.000.000đ của bạn đã được giải ngân thành công đến tài khoản ngân hàng của bạn.</Text>
+                    </View>
+                </View>
             </ScrollView>
         </SafeAreaView >
     )
