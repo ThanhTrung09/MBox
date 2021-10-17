@@ -5,6 +5,10 @@ import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../../assets/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
 
+import Blue from '../Images/Blue.svg'
+import Red from '../Images/Red.svg'
+import Yellow from '../Images/Yellow.svg'
+
 export default function HistoryScreen() {
     const { width, height } = Dimensions.get('window');
 
@@ -17,6 +21,15 @@ export default function HistoryScreen() {
                 <ScrollView showsVerticalScrollIndicator={false} style={{ height: height - 80 }}>
                     {/* Chưa làm ra */}
                     <View style={{ backgroundColor: '#02A04D', height: 99, width: '100%', borderRadius: 20, marginBottom: 17, justifyContent: 'center', alignItems: 'center' }}>
+                        <View style={{ position: 'absolute', left: 0, bottom: 0 }}>
+                            <Blue width="108" height="93" />
+                        </View>
+                        <View style={{ position: 'absolute', right: 0, top: 0 }}>
+                            <Red width="62" height="80" />
+                        </View>
+                        <View style={{ position: 'absolute', right: 0, top: 0 }}>
+                            <Yellow width="85" height="56" />
+                        </View>
                         <Text style={styles.headerText1}>Đã ứng trong kỳ</Text>
                         <Text style={styles.headerText2}>5.000.000 đ</Text>
                     </View>

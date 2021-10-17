@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, ScrollView, StatusBar, Animated } from 'react-native'
+import { StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, ScrollView, Animated } from 'react-native'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../../assets/config.json';
@@ -79,7 +79,6 @@ export default function HomeScreen() {
                             </View>
 
                             <View>
-                                <StatusBar hidden />
                                 <Progress step={15} steps={22.5} height={10} />
                             </View>
 
