@@ -1,9 +1,56 @@
-import React from 'react'
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, ScrollView } from 'react-native'
+import React, { useRef, useState, useEffect } from 'react'
+import { StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, ScrollView, StatusBar, Animated } from 'react-native'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../../assets/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
+
+const Progress = ({ step, steps, height }) => {
+    const [width, setWidth] = useState(0);
+    const animatedValue = useRef(new Animated.Value(-1000)).current;
+    const reactive = useRef(new Animated.Value(-1000)).current;
+
+    useEffect(() => {
+        Animated.timing(animatedValue, {
+            toValue: reactive,
+            duration: 300,
+            useNativeDriver: true,
+        }).start();
+    }, []);
+
+    useEffect(() => {
+        reactive.setValue(-width + (width * step) / steps);
+    }, [step, width])
+
+    return (
+        <View
+            onLayout={(e) => {
+                const newWidth = e.nativeEvent.layout.width;
+                setWidth(newWidth);
+            }}
+            style={{
+                height,
+                backgroundColor: '#ECF7FB',
+                overflow: 'hidden',
+                borderRadius: 5
+            }}>
+            <Animated.View
+                style={{
+                    height,
+                    width: '100%',
+                    borderRadius: 5,
+                    backgroundColor: '#0276C4',
+                    position: 'absolute',
+                    left: 0,
+                    top: 0,
+                    transform: [{
+                        translateX: animatedValue
+                    }]
+                }}
+            />
+        </View>
+    )
+}
 
 export default function HomeScreen() {
 
@@ -30,8 +77,13 @@ export default function HomeScreen() {
                                 </View>
                                 <Text style={styles.boxTopText2}>15.0/22.5</Text>
                             </View>
-                            <View style={styles.crossBar1}></View>
-                            <View style={styles.crossBar2}></View>
+
+                            <View>
+                                <StatusBar hidden />
+                                <Progress step={15} steps={22.5} height={10} />
+                            </View>
+
+                            <View style={styles.crossBar}></View>
 
                             <View style={styles.bodyBoxBetween}>
                                 <View style={styles.boxBetweenTitle1}>
@@ -133,12 +185,6 @@ const styles = StyleSheet.create({
     bodyBoxTop: {
         flexDirection: 'row',
         paddingBottom: 14,
-        borderBottomWidth: 10,
-        borderBottomColor: "#ECF7FB",
-        borderBottomEndRadius: 5,
-        borderBottomLeftRadius: 5,
-        borderBottomRightRadius: 5,
-        borderBottomStartRadius: 5
     },
     boxTopText: {
         flex: 1,
@@ -158,16 +204,7 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: '600',
     },
-    crossBar1: {
-        backgroundColor: '#0276C4',
-        height: 10,
-        width: 198,
-        borderRadius: 5,
-        position: 'absolute',
-        top: 60,
-        left: 16
-    },
-    crossBar2: {
+    crossBar: {
         marginTop: 22,
         backgroundColor: '#e5e5e5',
         width: '100%',
