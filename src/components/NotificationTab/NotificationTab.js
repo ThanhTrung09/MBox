@@ -1,8 +1,7 @@
 import React from 'react'
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Animated from 'react-native-reanimated';
 
 import AllScreen from './AllScreen'
 import OtherScreen from './OtherScreen'
@@ -11,7 +10,7 @@ import SystemScreen from './SystemScreen'
 
 function MyTabBar({ state, descriptors, navigation, position }) {
     return (
-        <View style={{ flexDirection: 'row', paddingTop: 20 }}>
+        <View style={styles.container}>
             {state.routes.map((route, index) => {
                 const { options } = descriptors[route.key];
                 const label =
@@ -40,24 +39,14 @@ function MyTabBar({ state, descriptors, navigation, position }) {
                         target: route.key,
                     });
                 };
-                // modify inputRange for custom behavior
-                const inputRange = state.routes.map((_, i) => i);
-                const opacity = Animated.interpolate(position, {
-                    inputRange,
-                    outputRange: inputRange.map((i) => (i === index ? 1 : 0)),
-                });
 
                 return (
                     <TouchableOpacity
-                        accessibilityRole="button"
-                        accessibilityState={isFocused ? { selected: true } : {}}
-                        accessibilityLabel={options.tabBarAccessibilityLabel}
-                        testID={options.tabBarTestID}
                         onPress={onPress}
                         onLongPress={onLongPress}
-                        style={{ flex: 1 }}
+                        style={styles.btn}
                     >
-                        <Animated.Text style={{ opacity }}>{label}</Animated.Text>
+                        <Text style={isFocused ? styles.textFocus : styles.text}>{label}</Text>
                     </TouchableOpacity>
                 );
             })}
@@ -78,4 +67,36 @@ export default function NotificationTab() {
         </NavigationContainer>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+    },
+    btn: {
+        paddingHorizontal: 21,
+        height: 43,
+        justifyContent: 'center',
+    },
+    text: {
+        fontFamily: 'SF-Pro-Display',
+        fontStyle: 'normal',
+        fontWeight: "normal",
+        fontSize: 16,
+        lineHeight: 19,
+        color: '#666666',
+        height: 43,
+    },
+    textFocus: {
+        fontFamily: 'SF-Pro-Display',
+        fontStyle: 'normal',
+        fontWeight: "500",
+        fontSize: 16,
+        lineHeight: 19,
+        color: '#000000',
+        height: 43,
+        borderBottomWidth: 5,
+        borderBottomColor: '#E61226'
+
+    }
+})
 
