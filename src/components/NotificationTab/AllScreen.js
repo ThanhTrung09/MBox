@@ -6,82 +6,97 @@ const Icon = createIconSetFromFontello(fontelloConfig);
 
 
 export default function AllScreen() {
-    const { width, height } = Dimensions.get('window');
     return (
-        <SafeAreaView style={{ height: height - 160 }}>
+        <SafeAreaView>
             <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
-                <View style={styles.box}>
-                    <View style={styles.boxMain}>
-                        <View style={styles.boxMainTitle}>
-                            <View style={styles.customIcon1}>
-                                <Icon name='dollar-1' size={16} color='white' />
+                <View style={styles.content}>
+                    <View style={styles.box}>
+                        <View style={styles.boxMain}>
+                            <View style={styles.boxMainTitle}>
+                                <View style={styles.customIcon1}>
+                                    <Icon name='dollar-1' size={16} color='white' />
+                                </View>
+                                <Text style={styles.boxMainText1}>Giao dịch</Text>
+                                <Text style={styles.boxMainText2}>27/08</Text>
                             </View>
-                            <Text style={styles.boxMainText1}>Giao dịch</Text>
-                            <Text style={styles.boxMainText2}>27/08</Text>
+                            <View style={styles.crossBar}></View>
+                            <Text style={styles.boxMainText3}>Ứng lương thành công</Text>
+                            <Text style={styles.boxMainText4}>Giao dịch ứng 1.000.000đ của bạn đã được giải ngân thành công đến tài khoản ngân hàng của bạn.</Text>
                         </View>
-                        <View style={styles.crossBar}></View>
-                        <Text style={styles.boxMainText3}>Ứng lương thành công</Text>
-                        <Text style={styles.boxMainText4}>Giao dịch ứng 1.000.000đ của bạn đã được giải ngân thành công đến tài khoản ngân hàng của bạn.</Text>
                     </View>
-                </View>
 
-                <View style={styles.box}>
-                    <View style={styles.boxMain}>
-                        <View style={styles.boxMainTitle}>
-                            <View style={styles.customIcon2}>
-                                <Icon name='loading' size={16} color='white' />
+                    <View style={styles.box}>
+                        <View style={styles.boxMain}>
+                            <View style={styles.boxMainTitle}>
+                                <View style={styles.customIcon2}>
+                                    <Icon name='loading' size={16} color='white' />
+                                </View>
+                                <Text style={styles.boxMainText1}>Cập nhật ứng dụng</Text>
+                                <Text style={styles.boxMainText2}>26/08</Text>
                             </View>
-                            <Text style={styles.boxMainText1}>Cập nhật ứng dụng</Text>
-                            <Text style={styles.boxMainText2}>26/08</Text>
+                            <View style={styles.crossBar}></View>
+                            <Text style={styles.boxMainText3}>Đã có phiên bản mới 1.0.1</Text>
+                            <Text style={styles.boxMainText4}>Hãy cập nhật phiên bản mới ngay để có thể trải nghiệm đầy đủ các tính năng của Mbox nhé.</Text>
                         </View>
-                        <View style={styles.crossBar}></View>
-                        <Text style={styles.boxMainText3}>Đã có phiên bản mới 1.0.1</Text>
-                        <Text style={styles.boxMainText4}>Hãy cập nhật phiên bản mới ngay để có thể trải nghiệm đầy đủ các tính năng của Mbox nhé.</Text>
                     </View>
-                </View>
 
-                <View style={styles.box}>
-                    <View style={styles.boxMain}>
-                        <View style={styles.boxMainTitle}>
-                            <View style={styles.customIcon1}>
-                                <Icon name='dollar-1' size={16} color='white' />
+                    <View style={styles.box}>
+                        <View style={styles.boxMain}>
+                            <View style={styles.boxMainTitle}>
+                                <View style={styles.customIcon1}>
+                                    <Icon name='dollar-1' size={16} color='white' />
+                                </View>
+                                <Text style={styles.boxMainText1}>Giao dịch</Text>
+                                <Text style={styles.boxMainText2}>27/08</Text>
                             </View>
-                            <Text style={styles.boxMainText1}>Giao dịch</Text>
-                            <Text style={styles.boxMainText2}>27/08</Text>
+                            <View style={styles.crossBar}></View>
+                            <Text style={styles.boxMainText3}>Ứng trước kỳ hạn lương thành công</Text>
+                            <Text style={styles.boxMainText4}>Giao dịch ứng trước kỳ hạn 10.000.000đ của bạn đã được giải ngân thành công đến tài khoản ngân hàng của bạn.</Text>
                         </View>
-                        <View style={styles.crossBar}></View>
-                        <Text style={styles.boxMainText3}>Ứng trước kỳ hạn lương thành công</Text>
-                        <Text style={styles.boxMainText4}>Giao dịch ứng trước kỳ hạn 10.000.000đ của bạn đã được giải ngân thành công đến tài khoản ngân hàng của bạn.</Text>
                     </View>
-                </View>
 
-                <View style={styles.box}>
-                    <View style={styles.boxMain}>
-                        <View style={styles.boxMainTitle}>
-                            <View style={styles.customIcon3}>
-                                <Icon name='settings' size={16} color='white' />
+                    <View style={styles.box}>
+                        <View style={styles.boxMain}>
+                            <View style={styles.boxMainTitle}>
+                                <View style={styles.customIcon3}>
+                                    <Icon name='settings' size={16} color='white' />
+                                </View>
+                                <Text style={styles.boxMainText1}>Hệ thống</Text>
+                                <Text style={styles.boxMainText2}>20/08</Text>
                             </View>
-                            <Text style={styles.boxMainText1}>Hệ thống</Text>
-                            <Text style={styles.boxMainText2}>20/08</Text>
+                            <View style={styles.crossBar}></View>
+                            <Text style={styles.boxMainText3}>Xác thực thông tin ngay</Text>
+                            <Text style={styles.boxMainText4}>Bạn muốn tăng hạn mức nhận trước lương của mình? Hãy tiến hành xác thực thông tin cá nhân để được tăng tủ lệ ứng trước lương nhé</Text>
                         </View>
-                        <View style={styles.crossBar}></View>
-                        <Text style={styles.boxMainText3}>Xác thực thông tin ngay</Text>
-                        <Text style={styles.boxMainText4}>Bạn muốn tăng hạn mức nhận trước lương của mình? Hãy tiến hành xác thực thông tin cá nhân để được tăng tủ lệ ứng trước lương nhé</Text>
                     </View>
-                </View>
 
-                <View style={styles.box}>
-                    <View style={styles.boxMain}>
-                        <View style={styles.boxMainTitle}>
-                            <View style={styles.customIcon1}>
-                                <Icon name='dollar-1' size={16} color='white' />
+                    <View style={styles.box}>
+                        <View style={styles.boxMain}>
+                            <View style={styles.boxMainTitle}>
+                                <View style={styles.customIcon1}>
+                                    <Icon name='dollar-1' size={16} color='white' />
+                                </View>
+                                <Text style={styles.boxMainText1}>Giao dịch</Text>
+                                <Text style={styles.boxMainText2}>27/08</Text>
                             </View>
-                            <Text style={styles.boxMainText1}>Giao dịch</Text>
-                            <Text style={styles.boxMainText2}>27/08</Text>
+                            <View style={styles.crossBar}></View>
+                            <Text style={styles.boxMainText3}>Ứng lương thành công</Text>
+                            <Text style={styles.boxMainText4}>Giao dịch ứng 1.000.000đ của bạn đã được giải ngân thành công đến tài khoản ngân hàng của bạn.</Text>
                         </View>
-                        <View style={styles.crossBar}></View>
-                        <Text style={styles.boxMainText3}>Ứng lương thành công</Text>
-                        <Text style={styles.boxMainText4}>Giao dịch ứng 1.000.000đ của bạn đã được giải ngân thành công đến tài khoản ngân hàng của bạn.</Text>
+                    </View>
+                    <View style={styles.box}>
+                        <View style={styles.boxMain}>
+                            <View style={styles.boxMainTitle}>
+                                <View style={styles.customIcon1}>
+                                    <Icon name='dollar-1' size={16} color='white' />
+                                </View>
+                                <Text style={styles.boxMainText1}>Giao dịch</Text>
+                                <Text style={styles.boxMainText2}>27/08</Text>
+                            </View>
+                            <View style={styles.crossBar}></View>
+                            <Text style={styles.boxMainText3}>Ứng lương thành công</Text>
+                            <Text style={styles.boxMainText4}>Giao dịch ứng 1.000.000đ của bạn đã được giải ngân thành công đến tài khoản ngân hàng của bạn.</Text>
+                        </View>
                     </View>
                 </View>
             </ScrollView>
@@ -92,6 +107,9 @@ export default function AllScreen() {
 const styles = StyleSheet.create({
     container: {
         padding: 20,
+    },
+    content: {
+        paddingBottom: 15
     },
     box: {
         backgroundColor: '#ffffff',

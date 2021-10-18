@@ -11,134 +11,133 @@ import Yellow from '../Images/Yellow.svg'
 
 export default function HistoryScreen() {
     const { width, height } = Dimensions.get('window');
-
     return (
-        <SafeAreaView style={{ backgroundColor: '#ffffff' }}>
+        <SafeAreaView style={{ backgroundColor: '#ffffff', height: height - 64 }}>
             <View style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.headerTitle}>Lịch sử ứng lương</Text>
                 </View>
-                <ScrollView showsVerticalScrollIndicator={false} style={{ height: height - 80 }}>
-                    {/* Chưa làm ra */}
-                    <View style={{ backgroundColor: '#02A04D', height: 99, width: '100%', borderRadius: 20, marginBottom: 17, justifyContent: 'center', alignItems: 'center' }}>
-                        <View style={{ position: 'absolute', left: 0, bottom: 0 }}>
-                            <Blue width="108" height="93" />
+                <ScrollView showsVerticalScrollIndicator={false} >
+                    <View style={{ paddingBottom: 15 }}>
+                        <View style={{ backgroundColor: '#02A04D', height: 99, width: '100%', borderRadius: 20, marginBottom: 17, justifyContent: 'center', alignItems: 'center' }}>
+                            <View style={{ position: 'absolute', left: 0, bottom: 0 }}>
+                                <Blue width="108" height="93" />
+                            </View>
+                            <View style={{ position: 'absolute', right: 0, top: 0 }}>
+                                <Red width="62" height="80" />
+                            </View>
+                            <View style={{ position: 'absolute', right: 0, top: 0 }}>
+                                <Yellow width="85" height="56" />
+                            </View>
+                            <Text style={styles.headerText1}>Đã ứng trong kỳ</Text>
+                            <Text style={styles.headerText2}>5.000.000 đ</Text>
                         </View>
-                        <View style={{ position: 'absolute', right: 0, top: 0 }}>
-                            <Red width="62" height="80" />
+                        {/* ... */}
+
+                        <View style={styles.body}>
+                            <Text style={styles.bodyTitle}>08/2021</Text>
+                            <View style={styles.bodyMain}>
+                                <View style={styles.bodyBox}>
+                                    <View style={styles.boxIcon1}>
+                                        <Icon name='coin' size={20} color='white' />
+                                    </View>
+                                    <View style={styles.bodyBoxText}>
+                                        <Text style={styles.bodyBoxText1}>Ứng 1.000.000 đ</Text>
+                                        <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
+                                    </View>
+                                    <FontAwesome name="angle-right" size={25} />
+                                </View>
+                                <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
+
+                                <View style={styles.bodyBox}>
+                                    <View style={styles.boxIcon2}>
+                                        <Icon name='coin' size={20} color='white' />
+                                    </View>
+                                    <View style={styles.bodyBoxText}>
+                                        <Text style={styles.bodyBoxText1}>Ứng 1.000.000 đ</Text>
+                                        <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
+                                    </View>
+                                    <FontAwesome name="angle-right" size={25} />
+                                </View>
+                                <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
+
+                                <View style={styles.bodyBox}>
+                                    <View style={styles.boxIcon3}>
+                                        <Icon name='coin' size={20} color='white' />
+                                    </View>
+                                    <View style={styles.bodyBoxText}>
+                                        <Text style={styles.bodyBoxText1}>Ứng trước kỳ hạn 2.000.000 đ</Text>
+                                        <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
+                                    </View>
+                                    <FontAwesome name="angle-right" size={25} />
+                                </View>
+                                <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
+
+                                <View style={styles.bodyBox}>
+                                    <View style={styles.boxIcon4}>
+                                        <Icon name='coin' size={20} color='white' />
+                                    </View>
+                                    <View style={styles.bodyBoxText}>
+                                        <Text style={styles.bodyBoxText1}>Ứng trước kỳ hạn 2.000.000 đ</Text>
+                                        <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
+                                    </View>
+                                    <FontAwesome name="angle-right" size={25} />
+                                </View>
+                                <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
+                            </View>
+
+                            <Text style={styles.bodyTitle}>07/2021</Text>
+
+                            <View style={styles.bodyMain}>
+                                <View style={styles.bodyBox}>
+                                    <View style={styles.boxIcon1}>
+                                        <Icon name='coin' size={20} color='white' />
+                                    </View>
+                                    <View style={styles.bodyBoxText}>
+                                        <Text style={styles.bodyBoxText1}>Ứng 1.000.000 đ</Text>
+                                        <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
+                                    </View>
+                                    <FontAwesome name="angle-right" size={25} />
+                                </View>
+                                <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
+
+                                <View style={styles.bodyBox}>
+                                    <View style={styles.boxIcon2}>
+                                        <Icon name='coin' size={20} color='white' />
+                                    </View>
+                                    <View style={styles.bodyBoxText}>
+                                        <Text style={styles.bodyBoxText1}>Ứng 1.000.000 đ</Text>
+                                        <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
+                                    </View>
+                                    <FontAwesome name="angle-right" size={25} />
+                                </View>
+                                <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
+
+                                <View style={styles.bodyBox}>
+                                    <View style={styles.boxIcon3}>
+                                        <Icon name='coin' size={20} color='white' />
+                                    </View>
+                                    <View style={styles.bodyBoxText}>
+                                        <Text style={styles.bodyBoxText1}>Ứng trước kỳ hạn 2.000.000 đ</Text>
+                                        <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
+                                    </View>
+                                    <FontAwesome name="angle-right" size={25} />
+                                </View>
+                                <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
+
+                                <View style={styles.bodyBox}>
+                                    <View style={styles.boxIcon4}>
+                                        <Icon name='coin' size={20} color='white' />
+                                    </View>
+                                    <View style={styles.bodyBoxText}>
+                                        <Text style={styles.bodyBoxText1}>Ứng trước kỳ hạn 2.000.000 đ</Text>
+                                        <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
+                                    </View>
+                                    <FontAwesome name="angle-right" size={25} />
+                                </View>
+                                <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
+                            </View>
                         </View>
-                        <View style={{ position: 'absolute', right: 0, top: 0 }}>
-                            <Yellow width="85" height="56" />
-                        </View>
-                        <Text style={styles.headerText1}>Đã ứng trong kỳ</Text>
-                        <Text style={styles.headerText2}>5.000.000 đ</Text>
-                    </View>
-                    {/* ... */}
-
-                    <View style={styles.body}>
-                        <Text style={styles.bodyTitle}>08/2021</Text>
-                        <View style={styles.bodyMain}>
-                            <View style={styles.bodyBox}>
-                                <View style={styles.boxIcon1}>
-                                    <Icon name='coin' size={20} color='white' />
-                                </View>
-                                <View style={styles.bodyBoxText}>
-                                    <Text style={styles.bodyBoxText1}>Ứng 1.000.000 đ</Text>
-                                    <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
-                                </View>
-                                <FontAwesome name="angle-right" size={25} />
-                            </View>
-                            <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
-
-                            <View style={styles.bodyBox}>
-                                <View style={styles.boxIcon2}>
-                                    <Icon name='coin' size={20} color='white' />
-                                </View>
-                                <View style={styles.bodyBoxText}>
-                                    <Text style={styles.bodyBoxText1}>Ứng 1.000.000 đ</Text>
-                                    <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
-                                </View>
-                                <FontAwesome name="angle-right" size={25} />
-                            </View>
-                            <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
-
-                            <View style={styles.bodyBox}>
-                                <View style={styles.boxIcon3}>
-                                    <Icon name='coin' size={20} color='white' />
-                                </View>
-                                <View style={styles.bodyBoxText}>
-                                    <Text style={styles.bodyBoxText1}>Ứng trước kỳ hạn 2.000.000 đ</Text>
-                                    <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
-                                </View>
-                                <FontAwesome name="angle-right" size={25} />
-                            </View>
-                            <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
-
-                            <View style={styles.bodyBox}>
-                                <View style={styles.boxIcon4}>
-                                    <Icon name='coin' size={20} color='white' />
-                                </View>
-                                <View style={styles.bodyBoxText}>
-                                    <Text style={styles.bodyBoxText1}>Ứng trước kỳ hạn 2.000.000 đ</Text>
-                                    <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
-                                </View>
-                                <FontAwesome name="angle-right" size={25} />
-                            </View>
-                            <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
-                        </View>
-
-                        <Text style={styles.bodyTitle}>07/2021</Text>
-
-                        <View style={styles.bodyMain}>
-                            <View style={styles.bodyBox}>
-                                <View style={styles.boxIcon1}>
-                                    <Icon name='coin' size={20} color='white' />
-                                </View>
-                                <View style={styles.bodyBoxText}>
-                                    <Text style={styles.bodyBoxText1}>Ứng 1.000.000 đ</Text>
-                                    <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
-                                </View>
-                                <FontAwesome name="angle-right" size={25} />
-                            </View>
-                            <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
-
-                            <View style={styles.bodyBox}>
-                                <View style={styles.boxIcon2}>
-                                    <Icon name='coin' size={20} color='white' />
-                                </View>
-                                <View style={styles.bodyBoxText}>
-                                    <Text style={styles.bodyBoxText1}>Ứng 1.000.000 đ</Text>
-                                    <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
-                                </View>
-                                <FontAwesome name="angle-right" size={25} />
-                            </View>
-                            <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
-
-                            <View style={styles.bodyBox}>
-                                <View style={styles.boxIcon3}>
-                                    <Icon name='coin' size={20} color='white' />
-                                </View>
-                                <View style={styles.bodyBoxText}>
-                                    <Text style={styles.bodyBoxText1}>Ứng trước kỳ hạn 2.000.000 đ</Text>
-                                    <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
-                                </View>
-                                <FontAwesome name="angle-right" size={25} />
-                            </View>
-                            <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
-
-                            <View style={styles.bodyBox}>
-                                <View style={styles.boxIcon4}>
-                                    <Icon name='coin' size={20} color='white' />
-                                </View>
-                                <View style={styles.bodyBoxText}>
-                                    <Text style={styles.bodyBoxText1}>Ứng trước kỳ hạn 2.000.000 đ</Text>
-                                    <Text style={styles.bodyBoxText2}>Đã giải ngân - 10:56 27/08/2021</Text>
-                                </View>
-                                <FontAwesome name="angle-right" size={25} />
-                            </View>
-                            <View style={{ backgroundColor: '#eef2f8', height: 1 }}></View>
-                        </View>
-
                     </View>
                 </ScrollView>
             </View>
