@@ -8,6 +8,7 @@ const Icon = createIconSetFromFontello(fontelloConfig);
 
 import Circle from '../Images/Circle.svg'
 import Circle2 from '../Images/Circle-2.svg'
+import { useIsFocused } from '@react-navigation/core';
 
 export default function AccountScreen() {
     const { width, height } = Dimensions.get('window');
@@ -86,7 +87,9 @@ export default function AccountScreen() {
                     <View style={styles.crossBar}></View>
                     <View style={styles.boxSecureTitle}>
                         <Text style={styles.boxText}>Xác thực vân tay</Text>
-                        <FontAwesome name="angle-right" size={25} color='#333333' />
+                        <TouchableOpacity style={styles.swipeFocus}>
+                            <View style={styles.swipeBtnFocus}></View>
+                        </TouchableOpacity>
                     </View>
                     <Text style={styles.boxText2}>Lưu ý: Tất cả các vân tay đã được đăng ký trong thiết bị đều có thể xác thực</Text>
                 </View>
@@ -299,5 +302,41 @@ const styles = StyleSheet.create({
         lineHeight: 14,
         fontWeight: 'normal',
         color: '#4F4F4F',
+    },
+    swipeFocus: {
+        height: 31,
+        width: 51,
+        backgroundColor: '#3FA1EA',
+        borderTopEndRadius: 15,
+        borderTopStartRadius: 15,
+        borderBottomStartRadius: 15,
+        borderBottomEndRadius: 15
+    },
+    swipe: {
+        height: 31,
+        width: 51,
+        backgroundColor: '#e5e5e5',
+        borderTopEndRadius: 15,
+        borderTopStartRadius: 15,
+        borderBottomStartRadius: 15,
+        borderBottomEndRadius: 15
+    },
+    swipeBtnFocus: {
+        height: 27,
+        width: 27,
+        backgroundColor: '#fff',
+        borderRadius: 27 / 2,
+        position: 'absolute',
+        right: 3,
+        top: 2
+    },
+    swipeBtn: {
+        height: 27,
+        width: 27,
+        backgroundColor: '#fff',
+        borderRadius: 27 / 2,
+        position: 'absolute',
+        left: 3,
+        top: 2
     }
 })
