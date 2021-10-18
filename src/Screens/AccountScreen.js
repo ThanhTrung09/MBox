@@ -1,6 +1,13 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView, Dimensions } from 'react-native'
+import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView, Dimensions, TouchableOpacity } from 'react-native'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+
+import { createIconSetFromFontello } from 'react-native-vector-icons';
+import fontelloConfig from '../../assets/config.json';
+const Icon = createIconSetFromFontello(fontelloConfig);
+
+import Circle from '../Images/Circle.svg'
+import Circle2 from '../Images/Circle-2.svg'
 
 export default function AccountScreen() {
     const { width, height } = Dimensions.get('window');
@@ -27,10 +34,37 @@ export default function AccountScreen() {
             <Header />
             <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
                 <View style={styles.upperBox}>
-                    {/* Chua Lam */}
+                    <View style={styles.upperTitle}>
+                        <Text style={styles.upperText}>Bạn muốn tăng hạn mức ứng trước lương?</Text>
+                    </View>
+                    <View style={styles.upperBoxIcon}>
+                        <Icon name='card-id' size={24} color='#02A04D' />
+                        <Icon name='check-face' size={24} color='#9DC9E7' />
+                        <Icon name='protect' size={24} color='#9DC9E7' />
+                    </View>
+                    <View>
+                        <View style={{ backgroundColor: '#ECF7FB', height: 4, marginHorizontal: 29, position: 'relative' }}></View>
+                        <View style={styles.iconCircle1}>
+                            <Circle width="19" height="19" />
+                        </View>
+                        <View style={styles.iconCircle2}>
+                            <Circle2 width="19" height="19" />
+                        </View>
+                        <View style={styles.iconCircle3}>
+                            <Circle2 width="19" height="19" />
+                        </View>
+                    </View>
+                    <View style={styles.upperBoxTitle}>
+                        <Text style={styles.upperBoxText}>Chụp hình CMND</Text>
+                        <Text style={styles.upperBoxText}>Xác thực khuôn mặt</Text>
+                        <Text style={styles.upperBoxText}>Bảo mật tối đa</Text>
+                    </View>
+                    <TouchableOpacity style={styles.upperBoxBtn}>
+                        <Text style={styles.upperBtnText}>Xác thực thông tin ngay</Text>
+                    </TouchableOpacity>
                 </View>
 
-                <Text style={styles.upperBoxTitle}>Thông tin chung</Text>
+                <Text style={styles.BoxTitle}>Thông tin chung</Text>
                 <View style={styles.boxInfo}>
                     <View style={styles.boxInfoTitle}>
                         <Text style={styles.boxText}>Thông tin các nhân</Text>
@@ -43,7 +77,7 @@ export default function AccountScreen() {
                     </View>
                 </View>
 
-                <Text style={styles.upperBoxTitle}>Bảo mật tài khoản</Text>
+                <Text style={styles.BoxTitle}>Bảo mật tài khoản</Text>
                 <View style={styles.boxSecure}>
                     <View style={styles.boxSecureTitle}>
                         <Text style={styles.boxText}>Đổi mật khẩu</Text>
@@ -57,7 +91,7 @@ export default function AccountScreen() {
                     <Text style={styles.boxText2}>Lưu ý: Tất cả các vân tay đã được đăng ký trong thiết bị đều có thể xác thực</Text>
                 </View>
 
-                <Text style={styles.upperBoxTitle}>Thông tin khác</Text>
+                <Text style={styles.BoxTitle}>Thông tin khác</Text>
                 <View style={styles.boxOtherInfo}>
                     <View style={styles.boxSecureTitle}>
                         <Text style={styles.boxText}>Chính sác bảo mật</Text>
@@ -84,7 +118,7 @@ export default function AccountScreen() {
                     <Text style={styles.footerText}>Phiên bản ứng dụng: 1.0.0</Text>
                 </View>
             </ScrollView>
-        </SafeAreaView>
+        </SafeAreaView >
     )
 }
 
@@ -92,7 +126,6 @@ const styles = StyleSheet.create({
     container: {
         paddingTop: 21,
         marginHorizontal: 19,
-        // height: height - 180,
     },
     header: {
         flexDirection: 'row',
@@ -130,7 +163,63 @@ const styles = StyleSheet.create({
     upperBox: {
         height: 244,
         backgroundColor: '#ffffff',
-        borderRadius: 8
+        borderRadius: 8,
+        justifyContent: 'space-evenly',
+    },
+    upperBoxIcon: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: 24
+    },
+    iconCircle1: {
+        position: 'absolute',
+        left: 26,
+        top: -8,
+    },
+    iconCircle2: {
+        position: 'absolute',
+        left: 168,
+        top: -8,
+    },
+    iconCircle3: {
+        position: 'absolute',
+        right: 26,
+        top: -8,
+    },
+    upperBoxTitle: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingHorizontal: 15
+    },
+    upperBoxText: {
+        fontFamily: 'SF-Pro-Display',
+        fontSize: 11,
+        lineHeight: 13.13,
+        color: '#828282',
+    },
+    upperBoxBtn: {
+        height: 44,
+        backgroundColor: '#0276C4',
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: 15
+    },
+    upperBtnText: {
+        fontFamily: 'SF-Pro-Display',
+        fontSize: 16,
+        lineHeight: 19,
+        color: '#fff',
+    },
+    upperTitle: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    upperText: {
+        fontFamily: 'SF-Pro-Display',
+        fontSize: 16,
+        lineHeight: 19,
+        color: '#000',
     },
 
     boxInfo: {
@@ -158,7 +247,7 @@ const styles = StyleSheet.create({
         height: 1,
         backgroundColor: '#EEF2F8'
     },
-    upperBoxTitle: {
+    BoxTitle: {
         marginTop: 27,
         marginBottom: 13,
         marginLeft: 8,
