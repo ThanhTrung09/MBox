@@ -8,7 +8,7 @@ import OtherScreen from './OtherScreen'
 import TransactionScreen from './TransactionScreen'
 import SystemScreen from './SystemScreen'
 
-function MyTabBar({ state, descriptors, navigation, position }) {
+function MyTabBar({ state, descriptors, navigation }) {
     return (
         <View style={styles.container}>
             {state.routes.map((route, index) => {
@@ -45,6 +45,7 @@ function MyTabBar({ state, descriptors, navigation, position }) {
                         onPress={onPress}
                         onLongPress={onLongPress}
                         style={styles.btn}
+                        key={label}
                     >
                         <Text style={isFocused ? styles.textFocus : styles.text}>{label}</Text>
                     </TouchableOpacity>

@@ -27,8 +27,6 @@ const ItemIcons = ({ label, isFocused }) => {
 
 function MyTabBar({ state, descriptors, navigation }) {
 
-
-
     return (
         <View style={styles.container}>
             {state.routes.map((route, index) => {
@@ -66,6 +64,7 @@ function MyTabBar({ state, descriptors, navigation }) {
                     <TouchableOpacity
                         onPress={onPress}
                         onLongPress={onLongPress}
+                        key={label}
                         style={isFocused ? styles.btnFocus : styles.btn}
                     >
 
