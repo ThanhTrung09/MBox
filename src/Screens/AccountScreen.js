@@ -90,7 +90,7 @@ export default function AccountScreen() {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 21,
+        paddingTop: 21,
         marginHorizontal: 19,
         // height: height - 180,
     },

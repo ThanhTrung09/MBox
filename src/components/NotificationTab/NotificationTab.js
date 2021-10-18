@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     },
     btn: {
         paddingHorizontal: 21,
-        height: 43,
+        // height: 43,
         justifyContent: 'center',
     },
     text: {

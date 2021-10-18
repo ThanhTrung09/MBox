@@ -8,8 +8,8 @@ const Icon = createIconSetFromFontello(fontelloConfig);
 export default function AllScreen() {
     const { width, height } = Dimensions.get('window');
     return (
-        <SafeAreaView style={styles.container}>
-            <ScrollView showsVerticalScrollIndicator={false} style={{ height: height - 180 }}>
+        <SafeAreaView style={{ height: height - 160 }}>
+            <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
                 <View style={styles.box}>
                     <View style={styles.boxMain}>
                         <View style={styles.boxMainTitle}>
@@ -91,7 +91,7 @@ export default function AllScreen() {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 20
+        padding: 20,
     },
     box: {
         backgroundColor: '#ffffff',

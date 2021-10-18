@@ -2,32 +2,32 @@ import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Bell, BellFocus, Home, HomeFocus, History, HistoryFocus, User, UserFocus } from './TabItems'
 
-import HomeScreen from '../Screens/HomeScreen';
-import HistoryScreen from '../Screens/HistoryScreen';
-import NotificationScreen from '../Screens/NotificationScreen';
-import AccountScreen from '../Screens/AccountScreen';
+import HomeScreen from '../../Screens/HomeScreen';
+import HistoryScreen from '../../Screens/HistoryScreen';
+import NotificationScreen from '../../Screens/NotificationScreen';
+import AccountScreen from '../../Screens/AccountScreen';
 
-import { createIconSetFromFontello } from 'react-native-vector-icons';
-import fontelloConfig from '../../assets/config.json';
-const Icon = createIconSetFromFontello(fontelloConfig);
+
+const ItemIcons = ({ label, isFocused }) => {
+    if (label == "Mbox") {
+        return isFocused ? <HomeFocus /> : <Home />
+    }
+    else if (label == "Lịch sử") {
+        return isFocused ? <HistoryFocus /> : <History />
+    }
+    else if (label == "Thông báo") {
+        return isFocused ? <BellFocus /> : <Bell />
+    }
+    else if (label == "Tài khoản") {
+        return isFocused ? <UserFocus /> : <User />
+    }
+}
 
 function MyTabBar({ state, descriptors, navigation }) {
 
-    const itemIcons = () => {
-        if (label === "Home") {
-            return <Icon name="home" size={18} />
-        }
-        else if (label === "History") {
-            return <Icon name="list" size={18} />
-        }
-        else if (label === "Notification") {
-            return <Icon name="bell" size={18} />
-        }
-        else if (label === "Account") {
-            return <Icon name="user" size={18} />
-        }
-    }
+
 
     return (
         <View style={styles.container}>
@@ -68,8 +68,8 @@ function MyTabBar({ state, descriptors, navigation }) {
                         onLongPress={onLongPress}
                         style={isFocused ? styles.btnFocus : styles.btn}
                     >
-                        <Icon name='home' size={20} color={isFocused ? '#479FDD' : 'black'} />
-                        {/* <itemIcons /> */}
+
+                        <ItemIcons label={label} isFocused={isFocused} />
                         {isFocused && <Text style={styles.text}>
                             {label}
                         </Text>}
