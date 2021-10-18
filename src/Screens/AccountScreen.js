@@ -312,15 +312,15 @@ const styles = StyleSheet.create({
         borderBottomStartRadius: 15,
         borderBottomEndRadius: 15
     },
-    swipe: {
-        height: 31,
-        width: 51,
-        backgroundColor: '#e5e5e5',
-        borderTopEndRadius: 15,
-        borderTopStartRadius: 15,
-        borderBottomStartRadius: 15,
-        borderBottomEndRadius: 15
-    },
+    // swipe: {
+    //     height: 31,
+    //     width: 51,
+    //     backgroundColor: '#e5e5e5',
+    //     borderTopEndRadius: 15,
+    //     borderTopStartRadius: 15,
+    //     borderBottomStartRadius: 15,
+    //     borderBottomEndRadius: 15
+    // },
     swipeBtnFocus: {
         height: 27,
         width: 27,
@@ -330,13 +330,13 @@ const styles = StyleSheet.create({
         right: 3,
         top: 2
     },
-    swipeBtn: {
-        height: 27,
-        width: 27,
-        backgroundColor: '#fff',
-        borderRadius: 27 / 2,
-        position: 'absolute',
-        left: 3,
-        top: 2
-    }
+    // swipeBtn: {
+    //     height: 27,
+    //     width: 27,
+    //     backgroundColor: '#fff',
+    //     borderRadius: 27 / 2,
+    //     position: 'absolute',
+    //     left: 3,
+    //     top: 2
+    // }
 })
